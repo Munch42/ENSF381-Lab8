@@ -12,6 +12,9 @@ try:
 except Exception as e:
     print(f"Error fetching content: {e}")
 
+# Printing out the prettify text:
+print(soup.prettify())
+
 #Step 3
 headings = sum(len(soup.find_all(f'h{i}')) for i in range(1, 7))
 
@@ -22,7 +25,6 @@ paragraphs = len(soup.find_all('p'))
 print(f"Number of headings: {headings}")
 print(f"Number of links: {links}")
 print(f"Number of pargraphs: {paragraphs}")
-
 
 #Step 4
 text = soup.get_text()
